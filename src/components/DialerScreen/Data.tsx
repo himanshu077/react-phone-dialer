@@ -8,7 +8,7 @@ export const data = [
   { label: 7, value: "PQRS" },
   { label: 8, value: "TUV" },
   { label: 9, value: "WXYZ" },
-  { label: "*", value: "" },
+  { label: "*", value: " " },
   { label: 0, value: "+" },
-  { label: "#", value: "" },
+  { label: "#", value: " " },
 ];

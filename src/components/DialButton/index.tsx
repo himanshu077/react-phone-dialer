@@ -3,22 +3,17 @@ import Box from "@mui/material/Box";
 import SpeedDial from "@mui/material/SpeedDial";
 
 interface DialButtonProps {
-  icon: JSX.Element;
-  onClick: () => void;
+  icon?: JSX.Element;
+  onClick?: () => void;
 }
 
 const DialButton: React.FC<DialButtonProps> = ({ icon, onClick }) => {
   return (
-    <Box
-      sx={{
-        width: "50%",
-        transform: "translateZ(0px)",
-        flexGrow: 1,
-      }}
-    >
+    <Box className="!flex !justify-center !items-center">
       <SpeedDial
         ariaLabel="SpeedDial basic example"
         sx={{
+          zIndex:-0,
           "& .MuiSpeedDial-fab": {
             backgroundColor: "#3D61F3",
             height: 48,

@@ -29,3 +29,19 @@ body,
 *:after {
   box-sizing: border-box;
 }
+
+
+.top-animation {
+  animation: slide-top 1.5s ease;
+}
+@keyframes slide-top {
+  0% {
+      transform: translateX(-40px);
+      opacity: 1;
+  }
+  100% {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
