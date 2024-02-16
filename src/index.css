@@ -7,8 +7,8 @@
   line-height: 1.5;
   font-weight: 400;
   color-scheme: light dark;
+  background-color: #ffffff;
   color: #000000;
-  background-color: #f3f7fd;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -45,3 +45,16 @@ body,
   }
 }
 
+.bottom-animation {
+  animation: slide-top 1.5s ease;
+}
+@keyframes slide-top {
+  0% {
+      transform: translateX(0px);
+      opacity: 1;
+  }
+  100% {
+      transform: translateX(0px);
+      opacity: 1;
+  }
+}

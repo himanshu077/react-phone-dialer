@@ -36,20 +36,34 @@ const DialerScreen = () => {
 
   const toggleDropdown = () => {
     setIsDropdownOpen((prevState) => !prevState);
+    const quickDialButton = document.getElementById("quickDialButton");
+    if (quickDialButton) {
+      if (!isDropdownOpen) {
+        quickDialButton.style.left = "calc(100% - 62px)";
+      } else {
+        quickDialButton.style.left = "-31px";
+      }
+    }
   };
 
   return (
     <>
       <Box
-        className="!container !rounded-md !max-w-xs !relative"
+        className="lg:!container md:!container !rounded-md lg:!max-w-xs md:!max-w-xs !relative"
         sx={{ boxShadow: "rgb(61 71 82 / 20%) 0 2px 12px" }}
       >
-        <Box className="!-rotate-90 !absolute !-left-6 !top-1/3">
+        <Box
+          id="quickDialButton"
+          className="!-rotate-90 !absolute bottom-animation !w-[86px] !z-10"
+          style={{
+            top: " calc((100% / 2) - 12px)",
+          }}
+        >
           <Button
             className="!text-xs !font-semibold !bg-white !py-1 !px-2 !capitalize !text-gray-900 !text-center !shadow-md !rounded-md cursor-pointer"
             style={{
               boxShadow:
-                "rgb(0 0 0 / 20%) 0 3px 1px -2px, rgb(0 0 0 / 14%) 0px 2px 2px 0px, rgb(0 0 0 / 12%) 0px 1px 5px 0px",
+                "inset rgb(0 0 0 / 20%) 0 3px 1px -2px, rgb(0 0 0 / 14%) 0px 2px 2px 0px, rgb(0 0 0 / 12%) 0px 1px 5px 0px",
             }}
             onClick={toggleDropdown}
           >
@@ -111,11 +125,11 @@ const DialerScreen = () => {
           <MenuButton />
         </Box>
         {isDropdownOpen && (
-          <Box
-            className="absolute top-animation !left-0 !min-w-[80%] !top-0 !w-full !h-full"
-          >
-            <CustomDropdown />
-          </Box>
+          <>
+            <Box className="absolute top-animation !left-0 !min-w-[90%] !top-0 !h-full">
+              <CustomDropdown />
+            </Box>
+          </>
         )}
       </Box>
     </>
