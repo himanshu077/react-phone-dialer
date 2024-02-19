@@ -27,7 +27,7 @@ const ContactList: React.FC<ContactListProps> = ({ contacts = [], letters }) => 
         bgcolor: "background.paper",
         position: "relative",
         overflow: "auto",
-        maxHeight: 300,
+        maxHeight: 345,
         "& ul": { padding: 0 },
         "&::-webkit-scrollbar": {
           width: "12px",
@@ -47,7 +47,7 @@ const ContactList: React.FC<ContactListProps> = ({ contacts = [], letters }) => 
         filteredLetters.map((letter) => (
           <li key={`section-${letter}`}>
             <ul>
-              <ListSubheader className="bg-stone-500 !font-semibold !text-gray-700 !text-md">
+              <ListSubheader className="bg-[--stone-500] !font-semibold !text-[--gray-700] !text-md">
                 {`${letter}`}
               </ListSubheader>
               {contacts.filter((contact) => contact.id === letter).map((contact) => (
@@ -60,10 +60,10 @@ const ContactList: React.FC<ContactListProps> = ({ contacts = [], letters }) => 
           </li>
         ))}
       {contacts.length === 0 && (
-        <Box className="!bg-gray-350 !flex !flex-col !py-5 !gap-3 !items-center">
-          <PersonIcon className="!text-gray-100"/>
-          <Typography className="!text-gray-100 !text-lg !font-extrabold">Opss!</Typography>
-          <Typography className="!text-gray-100 !text-base !font-extrabold" >Data is not found</Typography>
+        <Box className="!bg-[--gray-350] !flex !flex-col !py-5 !gap-3 !items-center">
+          <PersonIcon className="!text-[--gray-100]"/>
+          <Typography className="!text-[--gray-100] !text-lg !font-extrabold">Opss!</Typography>
+          <Typography className="!text-[--gray-100] !text-base !font-extrabold" >Data is not found</Typography>
           <Button className="!text-black !text-xs">TRY AGAIN!</Button>
         </Box>
       )}
